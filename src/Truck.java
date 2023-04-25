@@ -27,4 +27,14 @@ public class Truck extends Transport implements CarDiagnostics {
     public void setWheelsCount(int wheelsCount) {
         this.wheelsCount = wheelsCount;
     }
+
+    @Override
+    public void update(Transport transport) {
+        System.out.println("Обслуживаем " + transport.getModelName());
+        for (int i = 0; i < transport.getWheelsCount(); i++) {
+            transport.updateTyre();
+        }
+        checkEngine();
+        checkTrailer();
+    }
 }

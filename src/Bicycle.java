@@ -1,3 +1,9 @@
 public class Bicycle extends Transport {
-//Можно было наследоваться от Bicycle т.к. из задачи получается что это типичный транспорт
+    @Override
+    public void update(Transport transport) {
+        System.out.println("Обслуживаем " + transport.getModelName());
+        for (int i = 0; i < transport.getWheelsCount(); i++) {
+            transport.updateTyre();
+        }
+    }
 }
